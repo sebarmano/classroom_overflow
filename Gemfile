@@ -34,11 +34,10 @@ gem 'spring',        group: :development
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+# gem 'byebug'
 
 gem 'rspec-rails', '~> 3.0.1', group: [:development, :test]
 gem 'simplecov', require: false, group: :test
 gem 'guard-rspec', require: false, group: :development
+gem 'capybara', group: :test
 
