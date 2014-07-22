@@ -12,4 +12,8 @@ RSpec.describe Answer, :type => :model do
 	it 'validates presence of question_id' do
 		expect(answer.errors).to have_key(:question_id)
 	end
+
+	it 'belongs to a question' do
+		expect(subject).to belong_to(:question)
+	end
 end

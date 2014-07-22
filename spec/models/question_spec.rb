@@ -12,4 +12,8 @@ RSpec.describe Question, :type => :model do
 	it 'validates presence of content' do
 		expect(question.errors).to have_key(:content)
 	end
+
+	it 'has many answers' do
+		expect(subject).to have_many(:answers)
+	end
 end
