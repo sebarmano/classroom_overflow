@@ -35,9 +35,11 @@ gem 'spring',        group: :development
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 # gem 'byebug'
-
+gem 'simple_form'
 gem 'rspec-rails', '~> 3.0.1', group: [:development, :test]
-gem 'simplecov', require: false, group: :test
 gem 'guard-rspec', require: false, group: :development
+gem 'simplecov', require: false, group: :test
 gem 'capybara', group: :test
+gem 'factory_girl_rails', group: :test
+gem 'database_cleaner', group: :test
 
