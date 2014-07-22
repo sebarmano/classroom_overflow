@@ -42,4 +42,5 @@ gem 'simplecov', require: false, group: :test
 gem 'capybara', group: :test
 gem 'factory_girl_rails', group: :test
 gem 'database_cleaner', group: :test
+gem 'terminal-notifier-guard', group: :development
 
