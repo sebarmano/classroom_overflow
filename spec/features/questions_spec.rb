@@ -4,8 +4,8 @@ feature 'Manage questions' do
 	scenario 'when two questions exist' do
 		questions = create_list(:question, 2)
 		visit questions_path
-		expect(page).to have_content('Title 1')
-		expect(page).to have_content('Title 2')
+		expect(page).to have_content(questions.first.title)
+		expect(page).to have_content(questions.second.title)
 	end
 
 	scenario "allows user to add a new question" do
