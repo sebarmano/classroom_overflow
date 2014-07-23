@@ -12,7 +12,6 @@ class QuestionsController < ApplicationController
 
 	def create
 		@question = Question.new(question_params)
-
 		@question.save
 		flash[:notice] = 'Question added successfully'
 		respond_with @question, location: questions_path

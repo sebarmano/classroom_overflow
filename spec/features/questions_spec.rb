@@ -36,6 +36,7 @@ feature 'Show a question and its answers' do
 
 		expect(page).to have_content(question.title)
 		expect(page).to have_content(question.content)
+		expect(page).to have_content(question.answers.first.content)
 		expect(page).not_to have_content("There are no answers for this question.")	
 		expect(page).to have_content('Content') 
 	end

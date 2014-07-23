@@ -4,4 +4,7 @@ p = @question.content
 - if @question.answers.count == 0
 	p "There are no answers for this question."	
 
+- @question.answers.each do |answer|
+	p = answer.content
+	
 = render partial: 'answers/form', locals: {answer: @answer} 
