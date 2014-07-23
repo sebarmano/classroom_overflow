@@ -1,4 +1,7 @@
 class AnswersController < ApplicationController
+	
+	respond_to :html
+
 	def create
 		@answer = Answer.new(answer_params)
 		@answer.save
