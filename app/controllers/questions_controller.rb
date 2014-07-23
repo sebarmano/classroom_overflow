@@ -18,6 +18,11 @@ class QuestionsController < ApplicationController
 		respond_with @question, location: questions_path
 	end
 
+	def show
+		@question = Question.find(params[:id])
+		@answer = @question.answers.build
+	end
+
 	private
 	def question_params
 		params.require(:question).permit(:title, :content)

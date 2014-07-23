@@ -44,4 +44,6 @@ gem 'factory_girl_rails', group: :test
 gem 'database_cleaner', group: :test
 gem 'terminal-notifier-guard', group: :development
 gem 'shoulda', group: :test
+gem 'byebug', group: [:development, :test]
+gem "slim-rails"
 

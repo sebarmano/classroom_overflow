@@ -1,0 +1,7 @@
+h1 = @question.title
+p = @question.content
+
+- if @question.answers.count == 0
+	p "There are no answers for this question."	
+
+= render partial: 'answers/form', locals: {answer: @answer} 
