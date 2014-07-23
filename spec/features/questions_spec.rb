@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Manage questions' do
 	scenario 'when two questions exist' do
-		question = create_list(:question, 2)
+		questions = create_list(:question, 2)
 		visit questions_path
 		expect(page).to have_content('Title 1')
 		expect(page).to have_content('Title 2')
@@ -17,6 +17,7 @@ feature 'Manage questions' do
 
 		expect(page).to have_content(question.title)
 	end
+end
 
 feature 'Show a question and its answers' do
 	scenario 'when a question has no answers' do
@@ -29,9 +30,13 @@ feature 'Show a question and its answers' do
 		expect(page).to have_content('Content') # Ask how to test that there is a form in the page
 	end
 
-	# scenario 'when a question has two answers' do
-	# 	#it should show the answers and a form to create another answer
-	# end
-end
+	scenario 'when a question has two answers' do
+		question = create(:question_with_answers)
+		visit question_path(question)
 
+		expect(page).to have_content(question.title)
+		expect(page).to have_content(question.content)
+		expect(page).not_to have_content("There are no answers for this question.")	
+		expect(page).to have_content('Content') 
+	end
 end
